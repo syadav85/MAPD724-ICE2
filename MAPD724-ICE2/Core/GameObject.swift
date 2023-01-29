@@ -23,7 +23,7 @@ class GameObject : SKSpriteNode, GameProtocol
     var randomSource: GKARC4RandomSource?
     var randomDist: GKRandomDistribution?
     
-    // constructor / initializer
+    // Constructor / Initializer
     init(imageString: String, initialScale: CGFloat)
     {
         // initialize the game object with an image
@@ -31,6 +31,7 @@ class GameObject : SKSpriteNode, GameProtocol
         let color = UIColor.clear
         super.init(texture: texture, color: color, size: texture.size())
         
+        // configuration
         scale = initialScale
         setScale(scale!)
         width = texture.size().width * scale!
@@ -47,9 +48,7 @@ class GameObject : SKSpriteNode, GameProtocol
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Life-Cycle Functions
-    
-    
+    // LifeCycle Functions
     func Start()
     {
         
@@ -60,7 +59,6 @@ class GameObject : SKSpriteNode, GameProtocol
         
     }
     
-    
     func CheckBounds()
     {
         
@@ -70,6 +68,4 @@ class GameObject : SKSpriteNode, GameProtocol
     {
         
     }
-    
-    
 }

@@ -11,7 +11,7 @@ import SpriteKit
 
 class Player : GameObject
 {
-    // initializer
+    // Initializer
     init()
     {
         super.init(imageString: "plane", initialScale: 2.0)
@@ -25,7 +25,7 @@ class Player : GameObject
     // LifeCycle Functions
     override func Start()
     {
-        zPosition = 2
+        zPosition = Layer.plane.rawValue
         Reset()
     }
     
@@ -37,15 +37,15 @@ class Player : GameObject
     override func CheckBounds()
     {
         // constrain the player on the left boundary
-        if(position.x <= -490)
+        if(position.x <= -320)
         {
-            position.x = -490
+            position.x = -320
         }
         
         // constrain the player on the right boundary
-        if(position.x >= 490)
+        if(position.x >= 320)
         {
-            position.x = 490
+            position.x = 320
         }
     }
     
@@ -54,11 +54,9 @@ class Player : GameObject
         position.y = -640
     }
     
-    
     func TouchMove(newPos: CGPoint)
     {
         position = newPos
     }
-    
     
 }
